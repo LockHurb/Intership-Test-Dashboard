@@ -50,22 +50,22 @@ function App() {
 
 });
 
-  if(loading) return <p> Cargando lista de países... </p>;
-  if(error) return <p> Error: {error} </p>;
+  if(loading) return <p className="text-center mt-20 text-gray-600 text-xl font-semibold animate-pulse"> Cargando lista de países... </p>;
+  if(error) return <p className="text-center mt-20 text-red-500 text-xl font-bold"> Error: {error} </p>;
 
 return (
-    <div>
-      <header style={{ padding: '20px', borderBottom: '1px solid #eee' }}>
-        <h1>Where in the world?</h1>
+    <div className="min-h-screen bg-gray-50 text-gray-800 font-sans">
+      <header className="p-6 bg-white shadow-sm border-b border-gray-200">
+        <h1 className="text-xl font-extrabold tracking-tight">Where in the world?</h1>
       </header>
       
-      <main style={{ padding: '20px' }}>
+      <main className="p-6 max-w-7xl mx-auto">
         
         {selectedCountry ? (
           <CountryDetail country={selectedCountry} onBack={() => setSelectedCountry(null)}/>
         ) : (
           <>
-            <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '20px' }}>
+            <div className="flex flex-col md:flex-row justify-between items-center mb-10 gap-4">
               <SearchBar onSearch={setSearchTerm} />
               <RegionFilter onSelectRegion={setRegion} />
             </div>
