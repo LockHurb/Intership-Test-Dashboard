@@ -1,8 +1,13 @@
 import React from 'react';
 
-const CountryCard = ({ country }) => {
+const CountryCard = ({ country, onClick }) => {
     return (
-        <article style={{ border: '1px solid #ccc', padding: '10px', margin: '10px', borderRadius: '5px' }}>
+        <article onClick={() => onClick(country)} style={{ 
+        border: '1px solid #ccc', 
+        padding: '10px', 
+        borderRadius: '8px',
+        cursor: 'pointer'
+}}>
         {/* Imagen de bandera */}
         <img src={country.flags.png} alt={`Bandera de ${country.name.common}`} style={{ width: '100px', height: 'auto' }}
         />
