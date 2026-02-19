@@ -1,13 +1,17 @@
 import { useState, useEffect } from 'react'
 import { fetchCountries } from './services/api'
 import CountryList from './components/CountryList'
-import './App.css'
+import SearchBar from './components/SearchBar'
+import RegionFilter from './components/RegionFilter'
 
 function App() {
   
   const [countries, setCountries] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error , setError] = useState(null);
+
+  const [searchTerm, setSearchTerm] = useState('');
+  const [region, setRegion] = useState('');
 
   useEffect(() => {
 
@@ -33,16 +37,32 @@ function App() {
 
   }, []);
 
+  const filteredCountries = countries.filter((country) => {
+   
+    const matchesSearch = country.name.common.toLowerCase().includes(searchTerm.toLowerCase());
+
+    const matchesRegion = region === '' ||  country.region === region;
+
+    return matchesSearch && matchesRegion;
+
+});
+
   if(loading) return <p> Cargando lista de países... </p>;
+  if(error) return <p> Error: {error} </p>;
 
 return (
-    <div>
-      <header>
+<div>
+      <header style={{ padding: '20px', borderBottom: '1px solid #eee' }}>
         <h1>Where in the world?</h1>
       </header>
       
-      <main>
-        <CountryList countries={countries} />
+      <main style={{ padding: '20px' }}>
+        <div style={{ display: 'flex', justifyContent: 'space-between', flexWrap: 'wrap' }}>
+          <SearchBar onSearch={setSearchTerm} />
+          <RegionFilter onSelectRegion={setRegion} />
+        </div>
+
+        <CountryList countries={filteredCountries} />
       </main>
     </div>
   );
