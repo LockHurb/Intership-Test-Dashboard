@@ -13,7 +13,7 @@
 | Tipo de Enlace | URL |
 |----------------|-----|
 | Repositorio de GitHub | https://github.com/LockHurb/Intership-Test-Dashboard |
-| Video de Loom | [https://www.loom.com/share/...] |
+| Video de Loom | https://www.loom.com/share/0fffdf1e6d3142b28e4a9b62b0b39f4b |
 | Demo en Vivo (si está desplegado) | [https://intership-test-dashboard.vercel.app/] |
 
 ---
