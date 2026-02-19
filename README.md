@@ -1,9 +1,5 @@
 # Dashboard de Países - Entrega
 
-> **Instrucciones:**
-
----
-
 ## Información del Candidato
 
 - **Nombre:** Zahid Alejandro Díaz Tapia
