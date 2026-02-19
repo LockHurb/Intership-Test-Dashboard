@@ -50,12 +50,6 @@ npm start
 
 ## Características Implementadas
 
-- Lista de Países: 
-- Barra de búsqueda: B
-- Filtrado pr Región: 
-- Vista Detallada del País: 
-- Manejo de Errores: 
-
 ### Características Principales
 
 | Característica | Estado | Notas |
@@ -148,6 +142,7 @@ src/
 - [ ] Implementar la funcionalidad de clic en los "Border Countries" para navegar entre ellos.
 - [ ] Agregar animaciones de transición durante el scroll o en la presentación de la tarjeta.
 - [ ] Añadir descripciones e imágenes dentro de las tarjetas para promocionar el turismo.
+- [ ] Mejorar búsqueda por país.
 
 ---
 
